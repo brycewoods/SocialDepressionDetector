@@ -41,8 +41,6 @@ public class TwitterApi implements DataGatherer {
     {
         m_accounts = accountHandles;
         m_ScannedID = new ArrayList<String>();
-
-
     }
 
     public TwitterApi(HashMap<String,String> accountHandles , ArrayList<String> scanned)
@@ -50,6 +48,19 @@ public class TwitterApi implements DataGatherer {
         m_accounts = accountHandles;
         m_ScannedID = scanned;
     }
+
+    /*
+     *
+     * Description: Retrieves tweets of a single user.
+     * Input: Target handle to retrieve data from.
+     * Return: ArrayList<String> representing the list of new tweets.
+     *
+     * */
+    public ArrayList<String> GetTweetsSingleUser(String twitterHandle)
+    {
+        return RetrieveTweets(twitterHandle);
+    }
+
 
     public ArrayList<String> RetrieveData()
     {
@@ -155,7 +166,7 @@ public class TwitterApi implements DataGatherer {
 
     /*
     *
-    * Description: Cleans the id tags and ruturns clean ids.
+    * Description: Cleans the id tags and returns clean ids.
     * Return: String representing id.
     *
     * */
